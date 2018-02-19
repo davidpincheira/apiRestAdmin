@@ -1,0 +1,65 @@
+<h1>{{title}} Fase</h1>
+<hr>
+<div>{{errorMessage}}</div>
+<form [formGroup]="faseForm" (ngSubmit)="save()" novalidate>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Nombre</label>
+        <div class="col-md-4">
+            <input type="text"  class="form-control" formControlName="nombre">
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="nombre.invalid && (nombre.dirty || submitted)">
+                <div *ngIf="nombre.errors.required">
+                    nombre is required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Descripcion</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="descripcion" >
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="descripcion.invalid && (descripcion.dirty || submitted)">
+                 <div *ngIf="descripcion.errors.required">
+                    Descripcion is required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">URL web</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="url_web">
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="url_web.invalid && (url_web.dirty || submitted)">
+                <div *ngIf="url_web.errors.pattern">
+                    URL web inCorrecta!
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">URL app</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="url_app" >
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="url_app.invalid && (url_app.dirty || submitted)">
+                 <div *ngIf="url_app.errors.required">
+                    URL app is required
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form-group row">
+      <div class="col-md-12">
+           <input type="submit" class="btn btn-success" value="Save" />
+            <input type="button" class="btn btn-warning" value="Cancel" (click)="cancel()">
+      </div>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+<h1>{{title}} Show</h1>
+<hr>
+<div>{{errorMessage}}</div>
+<form [formGroup]="showForm" (ngSubmit)="save()" novalidate>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Nombre</label>
+        <div class="col-md-4">
+            <input type="text"  class="form-control" formControlName="nombre">
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="nombre.invalid && (nombre.dirty || submitted)">
+                <div *ngIf="nombre.errors.required">
+                    Nombre is required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Votos</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="votos" >
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="votos.invalid && (votos.dirty || submitted)">
+                <div *ngIf="votos.errors.required">
+                    Nombre is required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Fase</label>
+        <div class="col-md-4">
+            <select class="form-control" formControlName="idfase" >
+                <option *ngFor="let f of fases" value="{{f.id}}"> {{f.nombre}} </option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="idfase.invalid && (idfase.dirty || submitted)">
+                <div *ngIf="idfase.errors.pattern">
+                    Fase inCorrecta!
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-12">
+           <input type="submit" class="btn btn-success" value="Save" />
+            <input type="button" class="btn btn-warning" value="Cancel" (click)="cancel()">
+      </div>
+    </div>
+</form>

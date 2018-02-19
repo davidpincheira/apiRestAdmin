@@ -1,0 +1,29 @@
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>nombre</th>
+            <th>votos</th>
+            <th>fase</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sh of shows | search: searchText" [ngClass]="{'btn-primary': sh.id == currentId }">
+            <td>{{sh.id}}</td>
+            <td>{{sh.nombre}}</td>
+            <td>{{sh.votos}}</td>
+            <td>{{sh.idfase}}</td>
+            <td style="width: 70px;">
+                <i class="glyphicon glyphicon-edit pointer" (click)="edit(sh.id)" title="Edit"></i>
+                <i class="glyphicon glyphicon-trash pointer" (click)="delete(sh.id)"  title="Delete"></i>
+                <i class="glyphicon glyphicon-user pointer" title="Image"></i>
+            </td>
+        </tr>
+    </tbody>
+</table><br>
+
+    <div class="progress">
+            <a class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" 
+            aria-valuemin="0" aria-valuemax="100" style="width: 40px"></a>
+    </div>

@@ -1,0 +1,49 @@
+<h1>Preguntas
+  <button class="btn btn-success btn-circle pull-right" 
+          (click) = 'add()'
+          title="Add Preguntas">
+    <i class="glyphicon glyphicon-plus"></i>
+  </button>
+</h1>
+
+<div class="alert-danger">{{errorMessage}}</div>
+
+<div class="input-group">
+    <input type="text" class="form-control" 
+            placeholder="Search"    
+            [(ngModel)]="searchText"
+            aria-describedby="basic-addon1">
+    <span class="input-group-addon" id="basic-addon1">Search</span>
+</div> 
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>preguntas</th>
+            <th>puntos inicial</th>
+            <th>cantidad de lecturas max</th>
+            <th>descuento lectura</th>
+            <th>lecturas actuales</th>
+            <th>puntaje actual</th>
+            <th>pista</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let preg of preguntas | search: searchText" [ngClass]="{'btn-primary': preg.id == currentId }">
+            <td>{{preg.id}}</td>
+            <td>{{preg.pregunta}}</td>
+            <td>{{preg.puntos_inicial}}</td>
+            <td>{{preg.cant_lecturas_max}}</td>
+            <td>{{preg.descuento_lectura}}</td>
+            <td>{{preg.cant_lectura_actual}}</td>
+            <td>{{preg.puntaje_actual}}</td>
+            <td>{{preg.idpista.descripcion}}</td>
+            <td style="width: 70px;">
+                <i class="glyphicon glyphicon-edit pointer" (click)="edit(preg.id)" title="Edit"></i>
+                <i class="glyphicon glyphicon-trash pointer" (click)="delete(preg.id)"  title="Delete"></i>
+                <i class="glyphicon glyphicon-user pointer" title="Image"></i>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>

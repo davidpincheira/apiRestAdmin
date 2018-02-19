@@ -1,0 +1,40 @@
+<h1>{{title}} Grupo</h1>
+<hr>
+<div>{{errorMessage}}</div>
+<form [formGroup]="grupoForm" (ngSubmit)="save()" novalidate>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Numero</label>
+        <div class="col-md-4">
+            <input type="text"  class="form-control" formControlName="numero">
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="numero.invalid && (numero.dirty || submitted)">
+                <div *ngIf="numero.errors.required">
+                    numero is required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Descripcion</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="descripcion" >
+        </div>
+        <div class="col-md-6">
+            <div class="error" *ngIf="descripcion.invalid && (descripcion.dirty || submitted)">
+                 <div *ngIf="descripcion.errors.required">
+                    Descripcion is required
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="form-group row">
+      <div class="col-md-12">
+           <input type="submit" class="btn btn-success" value="Save" />
+            <input type="button" class="btn btn-warning" value="Cancel" (click)="cancel()">
+      </div>
+    </div>
+</form>
