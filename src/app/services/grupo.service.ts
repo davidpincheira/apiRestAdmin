@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class GrupoService {
-    baseUrl: string = 'http://192.168.4.8:1331/grupos'
+    baseUrl: string = 'http://localhost:3000/grupos'
 
     constructor(private http: Http) { }
 

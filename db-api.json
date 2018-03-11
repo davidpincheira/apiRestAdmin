@@ -1,0 +1,71 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "En que fecha se fundo la clinica?",
+      "puntos_inicial": 25,
+      "cant_lecturas_max": 3,
+      "puntaje_actual": 0,
+      "descuento_lectura": 1,
+      "cant_lectura_actual": 2,
+      "idpista": 3
+    }
+  ],
+  "pistas": [
+    {
+      "id": 1,
+      "orden": 2,
+      "descripcion": "klajsldk",
+      "nombre": 3,
+      "numero": 0
+    }
+  ],
+  "fases": [
+    {
+      "id": 1,
+      "nombre": "fase 1",
+      "descripcion": "klajsldk",
+      "url_web": "",
+      "url_app": ""
+    }
+  ],
+  "grupos": [
+    {
+      "id": 1,
+      "numero": 1,
+      "descripcion": "klajsldk"
+    }
+  ],
+  "participantes": [
+    {
+      "id": 1,
+      "nombre": "Antonio",
+      "apellido": "Perez",
+      "usuario": "anto_perez",
+      "idgrupo": 1,
+      "puntaje": 20
+    }
+  ],
+  "premios": [
+    {
+      "id": 1,
+      "nombre": "lavadora",
+      "descripcion": "lavadora LG",
+      "foto": "",
+      "entregado": 1,
+      "idgrupo": 1,
+      "idpista": 1
+    }
+  ],
+  "respuestas": [
+    {
+      "id": 1,
+      "descripcion": "lavadora LG",
+      "puntaje": "",
+      "respuesta_correcta": 1,
+      "idpregunta": 1
+    }
+  ]
+
+
+}
